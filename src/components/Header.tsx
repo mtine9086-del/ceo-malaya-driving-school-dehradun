@@ -20,8 +20,14 @@ function getInitialTheme(): Theme {
     const current = document.documentElement.dataset.theme;
     if (current === "dark" || current === "light") return current;
   }
-  if (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    return "dark";
+  if (typeof window !== "undefined") {
+    try {
+      const saved = localStorage.getItem("malay-theme");
+      if (saved === "dark" || saved === "light") return saved;
+    } catch {
+      // Ignore storage errors and fall back to system preference.
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
   }
   return "light";
 }
@@ -49,6 +55,12 @@ export default function Header() {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
   const { pathname } = useLocation();
   const onDarkHero = pathname === "/" && !scrolled;
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.theme = theme;
+    root.style.colorScheme = theme;
+  }, [theme]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -79,8 +91,6 @@ export default function Header() {
   const toggleTheme = () => {
     const next: Theme = isDark ? "light" : "dark";
     setTheme(next);
-    document.documentElement.dataset.theme = next;
-    document.documentElement.style.colorScheme = next;
     try {
       localStorage.setItem("malay-theme", next);
     } catch {
@@ -99,7 +109,6 @@ export default function Header() {
         )}
       >
         <div className="container-x flex items-center justify-between gap-4">
-          {/* Brand */}
           <Link to="/" className="flex items-center gap-3" aria-label={`${site.name} — home`}>
             <LogoMark className="shrink-0" />
             <span className="leading-tight">
@@ -113,7 +122,6 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Desktop nav */}
           <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
             {NAV.map((item) => (
               <NavLink
@@ -138,7 +146,6 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2.5">
-            {/* Required Light/Dark theme toggle */}
             <button
               type="button"
               onClick={toggleTheme}
@@ -147,9 +154,7 @@ export default function Header() {
               title={isDark ? "Switch to light theme" : "Switch to dark theme"}
               className={cn(
                 "theme-toggle inline-flex h-10 items-center gap-2 rounded-xl border px-3 text-[13px] font-semibold transition-all duration-200",
-                lightText
-                  ? "border-white/25 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
-                  : ""
+                lightText ? "border-white/25 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20" : ""
               )}
             >
               {isDark ? <Sun className="h-4 w-4" aria-hidden /> : <Moon className="h-4 w-4" aria-hidden />}
@@ -160,7 +165,6 @@ export default function Header() {
               Book a Trial
             </Button>
 
-            {/* Mobile menu toggle */}
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -178,7 +182,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile menu — rendered outside the blurred header box */}
       <div
         id="mobile-menu"
         className={cn(
