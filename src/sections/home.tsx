@@ -85,12 +85,12 @@ export function Hero() {
         <Reveal>
           <Chip tone="blue" className="border-white/25 bg-white/10 text-white backdrop-blur-sm">
             <MapPin className="h-3.5 w-3.5" aria-hidden />
-            Laksar · Haridwar · Uttarakhand
+            Ballupur · Dehradun · Uttarakhand
           </Chip>
         </Reveal>
         <Reveal delay={90}>
           <h1 className="mt-5 max-w-3xl text-4xl font-extrabold text-balance text-white sm:text-5xl lg:text-[64px] lg:leading-[1.04]">
-            Learn to drive with <span className="text-accent-300">confidence</span> — right here in Laksar.
+            Learn to drive with <span className="text-accent-300">confidence</span> — right here in Dehradun.
           </h1>
         </Reveal>
         <Reveal delay={180}>
@@ -234,7 +234,7 @@ export function FeaturedCourses() {
         <div className="container-x">
           <SectionHeading
             eyebrow="Courses & batches"
-            title="Popular courses in Laksar"
+            title="Popular courses in Dehradun"
             lead="Durations shown are typical sample plans — your instructor adjusts the pace to you. Fees are shared clearly on enquiry, never hidden."
             align="center"
           />
@@ -273,7 +273,7 @@ export function WhyChoose() {
               <div className="relative overflow-hidden rounded-3xl border border-line shadow-card">
                 <SafeImage
                   src="images/ground.jpg"
-                  alt="Training car weaving between cones at the Malay practice ground in Laksar"
+                  alt="Training car weaving between cones at the Malay practice ground in Dehradun"
                   className="aspect-[16/10] w-full"
                 />
                 <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-2xl border border-white/30 bg-navy-950/70 p-4 text-white backdrop-blur-md">
@@ -346,9 +346,9 @@ export function ServiceArea() {
 
               {/* pins */}
               {[
-                { top: "38%", left: "34%", label: "Roorkee" },
-                { top: "56%", left: "58%", label: "Laksar", primary: true },
-                { top: "68%", left: "82%", label: "Haridwar" },
+                { top: "38%", left: "34%", label: "Rajpur Road" },
+                { top: "56%", left: "58%", label: "Ballupur", primary: true },
+                { top: "68%", left: "82%", label: "Clement Town" },
               ].map((p) => (
                 <div key={p.label} className="absolute -translate-x-1/2 -translate-y-full" style={{ top: p.top, left: p.left }}>
                   <div className="flex flex-col items-center">
@@ -382,8 +382,8 @@ export function ServiceArea() {
           <div>
             <SectionHeading
               eyebrow="Where we teach"
-              title="Serving Laksar, Haridwar & Roorkee"
-              lead="Our practice ground and classroom are in Laksar. Weekly batch pickups run from Haridwar and Roorkee — tell us where you are when you enquire."
+              title="Serving Ballupur & Dehradun"
+              lead="Our practice ground and classroom are in Ballupur. Weekly batch pickups run across Dehradun — Rajpur Road, Clement Town and nearby areas — tell us where you are when you enquire."
             />
             <ul className="mt-8 space-y-3">
               {serviceAreas.map((a, i) => (
@@ -528,7 +528,7 @@ export function CTABand() {
               {site.region}
             </Chip>
             <h2 className="mx-auto mt-5 max-w-2xl font-display text-3xl font-extrabold text-balance text-white sm:text-4xl lg:text-[44px] lg:leading-[1.08]">
-              Ready to start driving? Book your first lesson in Laksar today.
+              Ready to start driving? Book your first lesson in Dehradun today.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-[15.5px] leading-relaxed text-white/75">
               Send an enquiry and we will call you back with batch timings, the right course for your level, and a

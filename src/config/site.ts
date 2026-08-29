@@ -12,12 +12,12 @@ export const site = {
   short: "Malay",
   tagline: "Learn to drive with confidence",
   description:
-    "Patient, safety-first car and two-wheeler driving lessons in Laksar, Haridwar (Uttarakhand) — for first-time and returning learners.",
+    "Patient, safety-first car and two-wheeler driving lessons in Dehradun (Uttarakhand) — for first-time and returning learners.",
 
   /* EDIT: set the real production domain before launch */
   baseUrl: "https://malaydrivingschool.in",
 
-  region: "Laksar, Haridwar, Uttarakhand",
+  region: "Dehradun, Uttarakhand",
   hours: "Mon – Sat · morning & evening batches",
 
   /* EDIT — contact channels. Leave "" until the real value is supplied.
@@ -25,7 +25,7 @@ export const site = {
   phone: "", // e.g. "+91 98765 43210"
   whatsapp: "", // digits only, with country code, e.g. "919876543210"
   email: "", // e.g. "hello@malaydrivingschool.in"
-  addressLine: "", // EDIT: full training-ground address when supplied
+  addressLine: "Ballupur Chowk, Satya Vihar, Ballupur, Dehradun, Uttarakhand 248001",
 
   /* EDIT — add only real, live social profiles */
   socials: [] as { label: string; href: string }[],

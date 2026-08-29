@@ -22,7 +22,7 @@ const values = [
   {
     icon: MapPin,
     title: "Local knowledge",
-    note: "We teach on the roads you will actually use — Laksar's lanes and markets first, the Roorkee–Haridwar road when you are ready.",
+    note: "We teach on the roads you will actually use — Ballupur's lanes and markets first, Chakrata Road and Rajpur Road when you are ready.",
   },
 ];
 
@@ -37,8 +37,8 @@ export default function About() {
   return (
     <>
       <PageMeta
-        title="About Malay | Driving School in Laksar, Haridwar (Uttarakhand)"
-        description="Malay Driving School is a local driving school in Laksar teaching two-wheeler and four-wheeler skills with a safety-first, patient method — for first-time and returning learners."
+        title="About Malay | Driving School in Dehradun (Uttarakhand)"
+        description="Malay Driving School is a local driving school in Dehradun teaching two-wheeler and four-wheeler skills with a safety-first, patient method — for first-time and returning learners."
       />
 
       <div className="border-b border-line bg-white pt-28 pb-12 sm:pt-32">
@@ -73,11 +73,11 @@ export default function About() {
           <div>
             <SectionHeading
               eyebrow="Our story"
-              title="Teaching Laksar to drive, one calm lesson at a time"
+              title="Teaching Dehradun to drive, one calm lesson at a time"
             />
             <Reveal delay={80} className="mt-5 space-y-4 text-[15px] leading-relaxed text-ink-600">
               <p>
-                {site.name} began with a simple observation: most people around Laksar were not afraid of driving —
+                {site.name} began with a simple observation: most people around Dehradun were not afraid of driving —
                 they were afraid of being taught badly. Being shouted at for stalling, being pushed onto the highway
                 on day two, being left confused about the licence test.
               </p>
@@ -87,8 +87,9 @@ export default function About() {
                 from a nervous first gear change to a confident first solo drive.
               </p>
               <p>
-                Today we teach two-wheeler and four-wheeler learners from Laksar, Haridwar, Roorkee and nearby
-                villages, and we support every learner through the learner&apos;s licence and RTO test process.
+                Today we teach two-wheeler and four-wheeler learners from Ballupur, Rajpur Road, Clement Town and
+                nearby areas across Dehradun, and we support every learner through the learner&apos;s licence and RTO
+                test process.
               </p>
             </Reveal>
           </div>

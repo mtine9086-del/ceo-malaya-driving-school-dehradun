@@ -21,23 +21,21 @@ const jsonLd = {
   image: `${site.baseUrl}/images/hero.jpg`,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Laksar",
+    streetAddress: "Ballupur Chowk, Satya Vihar, Ballupur",
+    addressLocality: "Dehradun",
     addressRegion: "Uttarakhand",
+    postalCode: "248001",
     addressCountry: "IN",
   },
-  areaServed: [
-    { "@type": "City", name: "Laksar" },
-    { "@type": "City", name: "Haridwar" },
-    { "@type": "City", name: "Roorkee" },
-  ],
+  areaServed: [{ "@type": "City", name: "Dehradun" }],
 };
 
 export default function Home() {
   return (
     <>
       <PageMeta
-        title="Malay Driving School | Car & Two-Wheeler Training in Laksar, Haridwar"
-        description="Patient, safety-first car and two-wheeler driving lessons in Laksar, Haridwar (Uttarakhand) — manual and automatic, new learner and refresher batches. Book a trial lesson."
+        title="Malay Driving School | Car & Two-Wheeler Training in Dehradun"
+        description="Patient, safety-first car and two-wheeler driving lessons in Dehradun (Uttarakhand) — manual and automatic, new learner and refresher batches. Book a trial lesson."
         jsonLd={jsonLd}
       />
       <Hero />

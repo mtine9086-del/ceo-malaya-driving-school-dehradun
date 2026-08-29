@@ -78,7 +78,7 @@ export const courses: Course[] = [
     featured: true,
     blurb: "From first clutch control to confident town and highway driving in a hatchback.",
     description:
-      "Our most popular course takes you from sitting in the driver's seat for the first time to handling Laksar's roads — and the Haridwar highway — with confidence. You learn in a well-maintained manual hatchback with an instructor beside you the whole way, starting on quiet lanes and the practice ground before moving to real traffic.",
+      "Our most popular course takes you from sitting in the driver's seat for the first time to handling Dehradun's roads — and the Chakrata Road stretch — with confidence. You learn in a well-maintained manual hatchback with an instructor beside you the whole way, starting on quiet lanes and the practice ground before moving to real traffic.",
     includes: [
       "Clutch, gear and steering control from day one",
       "Starting on quiet lanes and the cone practice ground",

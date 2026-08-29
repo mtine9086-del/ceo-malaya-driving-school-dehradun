@@ -6,7 +6,7 @@ export default function Instructors() {
   return (
     <>
       <PageMeta
-        title="Our Instructors | Malay Driving School, Laksar"
+        title="Our Instructors | Malay Driving School, Dehradun"
         description="Meet the patient, local driving instructors at Malay Driving School — specialists in manual and automatic cars, two-wheelers, women's batches and RTO test preparation."
       />
 

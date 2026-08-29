@@ -1,7 +1,7 @@
 # Malay Driving School — Website
 
 A production-ready marketing + enquiry website for **Malay Driving School**, a local driving
-school serving **Laksar, Haridwar, Uttarakhand (India)**. Clean, safety-first design; no motorsport
+school serving **Dehradun, Uttarakhand (India)**. Clean, safety-first design; no motorsport
 or luxury clichés. React + TypeScript + Vite + Tailwind CSS v4.
 
 ## Quick start

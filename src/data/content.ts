@@ -110,7 +110,7 @@ export const whyChoose = [
   },
   {
     title: "Real local roads",
-    note: "You practice where you will actually drive: Laksar's lanes and markets, then the Roorkee–Haridwar road when you are ready.",
+    note: "You practice where you will actually drive: Ballupur's lanes and markets, then Chakrata Road and Rajpur Road when you are ready.",
   },
   {
     title: "Cone practice ground",
@@ -156,10 +156,12 @@ export const processSteps = [
 
 /* --- Service areas --------------------------------------------------- */
 export const serviceAreas = [
-  { name: "Laksar", note: "Home base — practice ground and classroom", primary: true },
-  { name: "Haridwar", note: "Pickup points for weekly batches", primary: false },
-  { name: "Roorkee", note: "Pickup points for weekly batches", primary: false },
-  { name: "Nearby villages", note: "Coverage varies — ask us when you enquire", primary: false },
+  { name: "Ballupur", note: "Home base — practice ground and classroom", primary: true },
+  { name: "Rajpur Road", note: "Pickup points for weekly batches", primary: false },
+  { name: "Clement Town", note: "Pickup points for weekly batches", primary: false },
+  { name: "Prem Nagar", note: "Pickup points for weekly batches", primary: false },
+  { name: "Dalanwala", note: "Pickup points for weekly batches", primary: false },
+  { name: "Nearby areas", note: "Coverage varies — ask us when you enquire", primary: false },
 ];
 
 /* --- Testimonials (editable samples) --------------------------------- */
@@ -168,21 +170,21 @@ export const testimonials = [
     quote:
       "I was scared of even starting the scooter. By the second week I was riding to the market on my own. The instructors never once made me feel slow.",
     name: "Pooja R.",
-    area: "Laksar",
+    area: "Ballupur",
     course: "Two-wheeler training",
   },
   {
     quote:
       "Sir taught me hill starts and parking on the ground before taking me into traffic. Cleared my driving test in the first attempt.",
     name: "Aarav S.",
-    area: "Haridwar",
+    area: "Rajpur Road",
     course: "Car training — manual",
   },
   {
     quote:
-      "Got my licence years ago but never really drove. Six refresher sessions later, I now drive myself to Roorkee every day for work.",
+      "Got my licence years ago but never really drove. Six refresher sessions later, I now drive myself to work every day without a second thought.",
     name: "Mohit K.",
-    area: "Roorkee",
+    area: "Clement Town",
     course: "Refresher course",
   },
 ];

@@ -78,8 +78,8 @@ export default function Courses() {
   return (
     <>
       <PageMeta
-        title="Courses & Batches | Malay Driving School, Laksar"
-        description="Two-wheeler, manual and automatic car driving courses in Laksar — plus refresher lessons and learner's licence (LL) & RTO test guidance. Fees shared clearly on enquiry."
+        title="Courses & Batches | Malay Driving School, Dehradun"
+        description="Two-wheeler, manual and automatic car driving courses in Dehradun — plus refresher lessons and learner's licence (LL) & RTO test guidance. Fees shared clearly on enquiry."
       />
 
       {/* page header */}

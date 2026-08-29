@@ -12,8 +12,8 @@ export default function Contact() {
   return (
     <>
       <PageMeta
-        title={`${isTrial ? "Book a Trial Lesson" : "Contact & Enquire"} | Malay Driving School, Laksar`}
-        description="Enquire about two-wheeler or four-wheeler driving courses in Laksar, Haridwar — batch timings, fees and trial lessons. We respond during business hours."
+        title={`${isTrial ? "Book a Trial Lesson" : "Contact & Enquire"} | Malay Driving School, Dehradun`}
+        description="Enquire about two-wheeler or four-wheeler driving courses in Dehradun — batch timings, fees and trial lessons. We respond during business hours."
       />
 
       <div className="border-b border-line bg-white pt-28 pb-12 sm:pt-32">

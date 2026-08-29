@@ -51,8 +51,8 @@ export default function CourseDetail() {
   return (
     <>
       <PageMeta
-        title={`${course.title} in Laksar | Malay Driving School`}
-        description={`${course.blurb} ${course.duration}, ${course.sessions} sessions in Laksar (Haridwar). Fees shared clearly on enquiry.`}
+        title={`${course.title} in Dehradun | Malay Driving School`}
+        description={`${course.blurb} ${course.duration}, ${course.sessions} sessions in Dehradun. Fees shared clearly on enquiry.`}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Course",
@@ -63,7 +63,7 @@ export default function CourseDetail() {
             name: site.name,
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Laksar",
+              addressLocality: "Dehradun",
               addressRegion: "Uttarakhand",
               addressCountry: "IN",
             },
