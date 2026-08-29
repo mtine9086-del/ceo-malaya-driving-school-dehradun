@@ -1,25 +1,16 @@
 @import "tailwindcss";
 
-/* ------------------------------------------------------------------ */
-/*  Malay Driving School — design system (Tailwind v4 theme)    */
-/* ------------------------------------------------------------------ */
 @theme {
   --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-
-  /* Ink — warm charcoal scale */
   --color-ink-900: #15222d;
   --color-ink-700: #2c3b49;
   --color-ink-600: #485862;
   --color-ink-500: #5c6b7b;
   --color-ink-400: #8b98a5;
-
-  /* Paper — warm off-whites */
   --color-paper-100: #f6f4ee;
   --color-paper-200: #eeeade;
   --color-line: #e4ddcd;
-
-  /* Brand — road / safety blue */
   --color-brand-50: #eef4fb;
   --color-brand-100: #dceaf7;
   --color-brand-200: #b8d5ee;
@@ -28,106 +19,90 @@
   --color-brand-700: #0e4680;
   --color-brand-800: #0c3a6b;
   --color-navy-950: #0b1e30;
-
-  /* Accent — restrained caution amber (CTAs only) */
   --color-accent-100: #fdebc9;
   --color-accent-300: #f5c36b;
   --color-accent-500: #eb9a12;
   --color-accent-600: #c97a08;
-
-  /* Learner-board red — used only as a tiny brand mark */
   --color-lred-600: #ce2b37;
-
-  /* Status green */
   --color-safe-100: #def0e5;
   --color-safe-700: #18784c;
-
   --shadow-card: 0 1px 2px rgb(20 34 44 / 0.05), 0 10px 28px -14px rgb(20 34 44 / 0.2);
   --shadow-lift: 0 2px 6px rgb(20 34 44 / 0.06), 0 20px 44px -18px rgb(20 34 44 / 0.3);
   --shadow-pop: 0 28px 64px -24px rgb(11 30 48 / 0.4);
 }
 
-/* ------------------------------------------------------------------ */
-/*  Base                                                               */
-/* ------------------------------------------------------------------ */
-html {
-  scroll-behavior: smooth;
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --theme-background: #ffffff;
+  --theme-surface: #f7f8fa;
+  --theme-surface-elevated: #ffffff;
+  --theme-surface-subtle: #f1f4f7;
+  --theme-text: #17202a;
+  --theme-text-muted: #66717f;
+  --theme-border: #e3e7ec;
+  --theme-primary: #123b63;
+  --theme-accent: #e3a72f;
+  --theme-focus: #2563a8;
 }
 
+[data-theme="dark"] {
+  color-scheme: dark;
+  --theme-background: #0d1622;
+  --theme-surface: #142131;
+  --theme-surface-elevated: #192a3d;
+  --theme-surface-subtle: #101c2a;
+  --theme-text: #f2f5f8;
+  --theme-text-muted: #aeb9c6;
+  --theme-border: #2a394a;
+  --theme-primary: #6fa7d8;
+  --theme-accent: #e9b84a;
+  --theme-focus: #8cc4f4;
+}
+
+html { scroll-behavior: smooth; }
+
 body {
-  background-color: var(--color-paper-100);
-  color: var(--color-ink-900);
+  background-color: var(--theme-background);
+  color: var(--theme-text);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-family: var(--font-display);
   letter-spacing: -0.015em;
 }
 
-::selection {
-  background: var(--color-brand-600);
-  color: #fff;
-}
+::selection { background: var(--theme-primary); color: #fff; }
 
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
 [role="button"]:focus-visible {
-  outline: 3px solid rgb(28 103 181 / 0.65);
+  outline: 3px solid color-mix(in srgb, var(--theme-focus) 65%, transparent);
   outline-offset: 2px;
   border-radius: 8px;
 }
 
-input,
-select,
-textarea {
-  font: inherit;
-}
+input, select, textarea { font: inherit; }
+img { max-width: 100%; }
 
-img {
-  max-width: 100%;
-}
-
-/* ------------------------------------------------------------------ */
-/*  Layout & typography helpers                                        */
-/* ------------------------------------------------------------------ */
 .container-x {
   margin-inline: auto;
   width: 100%;
   max-width: 80rem;
   padding-inline: 1rem;
 }
-@media (min-width: 640px) {
-  .container-x {
-    padding-inline: 1.5rem;
-  }
-}
-@media (min-width: 1024px) {
-  .container-x {
-    padding-inline: 2rem;
-  }
-}
+@media (min-width: 640px) { .container-x { padding-inline: 1.5rem; } }
+@media (min-width: 1024px) { .container-x { padding-inline: 2rem; } }
 
-.section-pad {
-  padding-block: 3.5rem;
-}
-@media (min-width: 640px) {
-  .section-pad {
-    padding-block: 5rem;
-  }
-}
-@media (min-width: 1024px) {
-  .section-pad {
-    padding-block: 6rem;
-  }
-}
+.section-pad { padding-block: 3.5rem; }
+@media (min-width: 640px) { .section-pad { padding-block: 5rem; } }
+@media (min-width: 1024px) { .section-pad { padding-block: 6rem; } }
 
 .eyebrow {
   display: inline-flex;
@@ -140,25 +115,18 @@ img {
   color: var(--color-brand-700);
 }
 
-/* ------------------------------------------------------------------ */
-/*  Form fields                                                        */
-/* ------------------------------------------------------------------ */
 .input {
   width: 100%;
   border-radius: 0.75rem;
-  border: 1px solid var(--color-line);
-  background: #fff;
+  border: 1px solid var(--theme-border);
+  background: var(--theme-surface-elevated);
   padding: 0.75rem 1rem;
   font-size: 15px;
-  color: var(--color-ink-900);
+  color: var(--theme-text);
   box-shadow: 0 1px 2px rgb(20 34 44 / 0.05);
-  transition:
-    border-color 0.2s,
-    box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s;
 }
-.input::placeholder {
-  color: var(--color-ink-400);
-}
+.input::placeholder { color: var(--color-ink-400); }
 .input:focus {
   border-color: var(--color-brand-500);
   box-shadow: 0 0 0 4px rgb(28 103 181 / 0.15);
@@ -169,9 +137,6 @@ img {
   box-shadow: 0 0 0 4px rgb(206 43 55 / 0.1);
 }
 
-/* ------------------------------------------------------------------ */
-/*  Skip link                                                          */
-/* ------------------------------------------------------------------ */
 .skip-link {
   position: absolute;
   width: 1px;
@@ -196,71 +161,69 @@ img {
   clip: auto;
   white-space: normal;
   border-radius: 0.75rem;
-  background: #fff;
-  color: var(--color-brand-700);
+  background: var(--theme-surface-elevated);
+  color: var(--theme-primary);
   font-family: var(--font-display);
   font-weight: 700;
   box-shadow: var(--shadow-pop);
 }
 
-/* ------------------------------------------------------------------ */
-/*  Scroll reveal (driven by <Reveal />)                               */
-/* ------------------------------------------------------------------ */
+.theme-header {
+  background-color: color-mix(in srgb, var(--theme-background) 95%, transparent) !important;
+  border-color: var(--theme-border) !important;
+  color: var(--theme-text);
+}
+.theme-menu {
+  background: var(--theme-background);
+  color: var(--theme-text);
+}
+.theme-toggle {
+  border-color: var(--theme-border);
+  background: var(--theme-surface-elevated);
+  color: var(--theme-text);
+}
+.theme-toggle:hover { background: var(--theme-surface-subtle); }
+
+[data-theme="dark"] .text-ink-900 { color: var(--theme-text) !important; }
+[data-theme="dark"] .text-ink-700 { color: #d6dee7 !important; }
+[data-theme="dark"] .text-ink-600 { color: var(--theme-text-muted) !important; }
+[data-theme="dark"] .text-ink-500 { color: var(--theme-text-muted) !important; }
+[data-theme="dark"] .text-ink-400 { color: #8794a3 !important; }
+[data-theme="dark"] .bg-white { background-color: var(--theme-surface-elevated) !important; }
+[data-theme="dark"] .bg-paper-100 { background-color: var(--theme-surface) !important; }
+[data-theme="dark"] .bg-paper-200 { background-color: var(--theme-surface-subtle) !important; }
+[data-theme="dark"] .border-line { border-color: var(--theme-border) !important; }
+[data-theme="dark"] .bg-brand-50 { background-color: #18324d !important; }
+[data-theme="dark"] .text-brand-700 { color: #9ac7ee !important; }
+[data-theme="dark"] .text-brand-600 { color: #86b8e3 !important; }
+[data-theme="dark"] .bg-brand-100 { background-color: #1b3854 !important; }
+[data-theme="dark"] .text-white { color: #f2f5f8; }
+
 .rv {
   opacity: 0;
   transform: translateY(var(--rv-y, 22px));
-  transition:
-    opacity 0.85s cubic-bezier(0.22, 0.61, 0.21, 1) var(--rv-d, 0ms),
-    transform 0.85s cubic-bezier(0.22, 0.61, 0.21, 1) var(--rv-d, 0ms);
+  transition: opacity 0.85s cubic-bezier(0.22, 0.61, 0.21, 1) var(--rv-d, 0ms), transform 0.85s cubic-bezier(0.22, 0.61, 0.21, 1) var(--rv-d, 0ms);
 }
-.rv.is-in {
-  opacity: 1;
-  transform: none;
-}
+.rv.is-in { opacity: 1; transform: none; }
 
-/* ------------------------------------------------------------------ */
-/*  Gentle hero drift                                                  */
-/* ------------------------------------------------------------------ */
-.hero-zoom {
-  animation: heroDrift 26s ease-in-out infinite alternate;
-}
+.hero-zoom { animation: heroDrift 26s ease-in-out infinite alternate; }
 @keyframes heroDrift {
-  from {
-    transform: scale(1.02) translateY(0);
-  }
-  to {
-    transform: scale(1.09) translateY(-1.5%);
-  }
+  from { transform: scale(1.02) translateY(0); }
+  to { transform: scale(1.09) translateY(-1.5%); }
 }
 
-/* ------------------------------------------------------------------ */
-/*  Road centre-line divider                                           */
-/* ------------------------------------------------------------------ */
 .roadline {
   height: 2px;
-  background-image: linear-gradient(to right, #e4ddcd 58%, rgba(228, 221, 205, 0) 58%);
+  background-image: linear-gradient(to right, var(--theme-border) 58%, transparent 58%);
   background-size: 26px 2px;
   background-repeat: repeat-x;
 }
 
-/* ------------------------------------------------------------------ */
-/*  Reduced motion                                                     */
-/* ------------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .rv {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .hero-zoom {
-    animation: none;
-  }
-  *,
-  *::before,
-  *::after {
+  html { scroll-behavior: auto; }
+  .rv { opacity: 1; transform: none; transition: none; }
+  .hero-zoom { animation: none; }
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
