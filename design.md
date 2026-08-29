@@ -16,6 +16,7 @@ Priorities:
 - consistent systems before one-off styling
 - authentic imagery before generic visual tricks
 - responsive behavior as a first-class requirement
+- both light and dark themes must feel intentionally designed
 
 The visual language should feel established, credible and locally relevant while remaining modern enough to compete with high-quality professional service websites.
 
@@ -57,32 +58,123 @@ The website should communicate:
 
 Do not make the brand feel overly corporate, childish, flashy or artificially luxurious.
 
+## Theme System
+
+The website supports two fully designed visual themes:
+
+- **Light Theme** — the primary/default presentation: clean, bright, professional and highly readable.
+- **Dark Theme** — a deliberate premium alternative: deep navy/charcoal surfaces, controlled contrast and comfortable readability.
+
+Dark mode must NOT be implemented as a simple color inversion. Each semantic token must have a considered light and dark value.
+
+### Theme behavior
+
+- Respect the user's system preference on first visit when no saved preference exists.
+- Provide a clear manual theme toggle.
+- Persist the user's selected theme across page loads.
+- Never cause a flash of the wrong theme during initial rendering where technically possible.
+- Keep the toggle accessible by keyboard and screen readers.
+- Use an understandable icon/label combination; do not rely on an icon alone.
+- Theme switching should be subtle and should not animate excessively.
+- Respect `prefers-reduced-motion`.
+
+### Light theme
+
+The light theme should feel:
+- clean
+- trustworthy
+- spacious
+- crisp
+- approachable
+
+Use warm/neutral whites and very light surfaces rather than harsh visual contrast everywhere.
+
+### Dark theme
+
+The dark theme should feel:
+- premium
+- calm
+- focused
+- sophisticated
+- comfortable for extended viewing
+
+Do not use pure black as the default page background. Prefer deep navy/charcoal tones with clearly separated surfaces.
+
+Do not use pure white for large text blocks. Use an off-white primary text color and softer muted text.
+
+Accent colors should remain controlled and should not become neon against dark surfaces.
+
 ## Color System
 
-Use a restrained semantic palette. Prefer a strong primary brand color supported by neutral surfaces and one controlled accent.
+Use semantic design tokens so components never depend on hard-coded visual assumptions.
 
-Recommended tokens:
+### Light theme tokens
 
 ```css
---color-background: #FFFFFF;
---color-surface: #F7F8FA;
---color-surface-elevated: #FFFFFF;
---color-primary: #123B63;
---color-primary-hover: #0E2F50;
---color-accent: #E3A72F;
---color-accent-hover: #C99120;
---color-text: #17202A;
---color-text-muted: #66717F;
---color-text-inverse: #FFFFFF;
---color-border: #E3E7EC;
---color-success: #2E7D5B;
---color-error: #B42318;
---color-warning: #A15C00;
+:root,
+[data-theme="light"] {
+  --color-background: #FFFFFF;
+  --color-surface: #F7F8FA;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-subtle: #F1F4F7;
+  --color-primary: #123B63;
+  --color-primary-hover: #0E2F50;
+  --color-primary-active: #0A2743;
+  --color-accent: #E3A72F;
+  --color-accent-hover: #C99120;
+  --color-text: #17202A;
+  --color-text-muted: #66717F;
+  --color-text-subtle: #7B8794;
+  --color-text-inverse: #FFFFFF;
+  --color-border: #E3E7EC;
+  --color-border-strong: #CBD2DA;
+  --color-success: #2E7D5B;
+  --color-error: #B42318;
+  --color-warning: #A15C00;
+  --color-focus: #2563A8;
+}
+```
+
+### Dark theme tokens
+
+```css
+[data-theme="dark"] {
+  --color-background: #0D1622;
+  --color-surface: #142131;
+  --color-surface-elevated: #192A3D;
+  --color-surface-subtle: #101C2A;
+  --color-primary: #6FA7D8;
+  --color-primary-hover: #86B8E3;
+  --color-primary-active: #A0C8EA;
+  --color-accent: #E9B84A;
+  --color-accent-hover: #F1C766;
+  --color-text: #F2F5F8;
+  --color-text-muted: #AEB9C6;
+  --color-text-subtle: #8794A3;
+  --color-text-inverse: #0D1622;
+  --color-border: #2A394A;
+  --color-border-strong: #3A4B5E;
+  --color-success: #63B58A;
+  --color-error: #F08A83;
+  --color-warning: #E4A65C;
+  --color-focus: #8CC4F4;
+}
 ```
 
 Do not introduce arbitrary colors outside the semantic system unless a genuine content requirement demands it.
 
 Accent colors should be used sparingly for emphasis, important actions, highlights and selected states—not as large decorative fills throughout the page.
+
+### Theme-specific rules
+
+- Never hard-code `#FFFFFF` or near-white as a large surface in dark theme.
+- Never hard-code dark text colors on dark surfaces.
+- Never hard-code dark backgrounds behind components that must work in light theme.
+- Images should remain natural in both themes; avoid global dark overlays that make photography muddy.
+- Borders must remain visible but subtle in both themes.
+- Shadows should be lighter/subtler in dark theme and should not create artificial glowing edges.
+- Form controls must use theme-aware surfaces, borders, placeholder colors and focus states.
+- Buttons must maintain sufficient contrast in both themes.
 
 ## Typography
 
@@ -157,6 +249,8 @@ Cards should generally rely on a combination of surface contrast, border and res
 
 Avoid stacking multiple shadows or using strong shadows on every element.
 
+Dark theme should use reduced shadow intensity and stronger surface differentiation rather than heavy black shadows.
+
 ## Navigation
 
 The navigation should immediately communicate brand identity and provide clear access to the most important destinations.
@@ -164,11 +258,12 @@ The navigation should immediately communicate brand identity and provide clear a
 Requirements:
 - simple hierarchy
 - clear active state
-- strong contrast
+- strong contrast in both themes
 - obvious primary contact/action
 - consistent spacing
 - accessible keyboard focus
 - mobile navigation that does not obstruct content
+- clearly accessible theme toggle
 
 Do not overload the navigation with too many links.
 
@@ -195,6 +290,8 @@ Recommended structure:
 
 Avoid placing excessive text, badges or decorative elements over the hero image.
 
+Hero text and overlays must remain readable in both themes. Do not make dark-theme hero imagery artificially dark merely to force contrast; use an intentional localized overlay where necessary.
+
 ## Buttons
 
 Use a clear hierarchy:
@@ -212,9 +309,11 @@ Buttons must have:
 - clear label
 - adequate touch target
 - hover state
-- focus state
+- focus-visible state
+- active state
 - disabled state where relevant
 - consistent height and padding
+- sufficient contrast in both themes
 
 Do not create many visually competing CTA styles.
 
@@ -233,9 +332,11 @@ Card hierarchy should be based on:
 
 Cards should not all look identical when their purposes differ.
 
+Dark-theme cards should use elevated surfaces and subtle borders rather than excessive glow.
+
 ## Forms
 
-Forms must feel simple, trustworthy and easy to complete.
+Forms must feel simple, trustworthy and easy to complete in both themes.
 
 Requirements:
 - visible labels
@@ -247,6 +348,7 @@ Requirements:
 - error state
 - success feedback
 - keyboard accessibility
+- theme-aware input backgrounds, borders and placeholder text
 
 Do not request unnecessary information.
 
@@ -296,6 +398,8 @@ Icons should support recognition and hierarchy, not act as decoration everywhere
 
 Avoid mixing unrelated icon styles, weights or visual metaphors.
 
+Icons must remain legible against both light and dark surfaces.
+
 ## Motion & Interaction
 
 Motion should be subtle and purposeful.
@@ -305,6 +409,7 @@ Recommended:
 - restrained entrance animation
 - small state transitions
 - subtle image movement only where useful
+- restrained theme transition
 
 Typical transition range: 150–300ms.
 
@@ -338,6 +443,7 @@ Prioritize:
 - simplified navigation
 - reduced decorative effects
 - sensible image cropping
+- accessible theme toggle
 
 Avoid horizontal overflow at every viewport width.
 
@@ -346,7 +452,7 @@ Avoid horizontal overflow at every viewport width.
 The design should follow WCAG 2.2 principles where applicable.
 
 Requirements:
-- sufficient text/background contrast
+- sufficient text/background contrast in BOTH themes
 - visible keyboard focus
 - meaningful labels
 - semantic heading hierarchy
@@ -355,6 +461,7 @@ Requirements:
 - motion reduction support
 - readable text sizes
 - clear link/button distinction
+- accessible theme switcher
 
 Accessibility should be part of the design rather than an afterthought.
 
@@ -372,6 +479,8 @@ Prefer:
 Large hero video or complex visual effects should only be used when their value clearly justifies their cost.
 
 Reserve animation and visual complexity for moments that improve understanding or interaction.
+
+Theme switching must not require loading an entirely separate visual asset set unless necessary.
 
 ## Section Composition
 
@@ -411,7 +520,7 @@ Interactive components should define, where applicable:
 - error
 - success
 
-State styling must remain consistent across the system.
+State styling must remain consistent across the system and remain distinguishable in both themes.
 
 ## Page-Level Consistency
 
@@ -419,12 +528,13 @@ Every page should feel like part of the same product.
 
 Reuse:
 - typography
-- color tokens
+- semantic color tokens
 - spacing
 - button hierarchy
 - radius language
 - image treatment
 - interaction behavior
+- theme behavior
 
 Do not create a completely different visual language for individual pages without a strong content reason.
 
@@ -441,6 +551,8 @@ Do not create a completely different visual language for individual pages withou
 - preserve accessibility
 - favor consistency
 - use evidence-based trust signals
+- design dark mode as a complete visual system
+- test important components in both themes
 
 ### DON'T
 - overload sections with effects
@@ -453,12 +565,19 @@ Do not create a completely different visual language for individual pages withou
 - sacrifice readability for style
 - rely on trendy effects to communicate quality
 - make the website resemble a generic AI-generated template
+- simply invert light-theme colors to create dark mode
+- use pure black backgrounds or excessive neon/glow in dark mode
+- allow theme-specific components to drift into a different design language
 
 ## Final Design Standard
 
 The finished website should feel:
 
 **Professional. Trustworthy. Modern. Human-designed. Confident. Approachable. Refined.**
+
+Both themes must feel like intentional expressions of the same brand—not two unrelated designs.
+
+The light theme should be the clean, bright professional experience. The dark theme should provide a sophisticated, comfortable alternative without becoming flashy or overly futuristic.
 
 The design should not try to impress users by showing how many effects it can produce. It should impress them through the quality of its decisions.
 
