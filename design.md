@@ -70,13 +70,77 @@ Dark mode must NOT be implemented as a simple color inversion. Each semantic tok
 ### Theme behavior
 
 - Respect the user's system preference on first visit when no saved preference exists.
-- Provide a clear manual theme toggle.
+- Provide a clear manual theme toggle button in the site header/navigation on desktop and in the mobile navigation/menu on smaller screens.
+- The toggle must be visible, discoverable and reachable without opening an unrelated settings panel.
 - Persist the user's selected theme across page loads.
 - Never cause a flash of the wrong theme during initial rendering where technically possible.
 - Keep the toggle accessible by keyboard and screen readers.
-- Use an understandable icon/label combination; do not rely on an icon alone.
+- Use an understandable icon + accessible text/label; never rely on an icon alone.
 - Theme switching should be subtle and should not animate excessively.
 - Respect `prefers-reduced-motion`.
+
+### Theme Toggle Button — Required UI Component
+
+A real, clickable **Light/Dark Theme Toggle Button** is mandatory. This is not merely a documentation concept.
+
+#### Desktop placement
+
+Place the theme toggle in the primary header/navigation area, visually separated from the main navigation links but aligned with the existing action controls.
+
+Recommended order:
+
+`Navigation → Theme Toggle → Primary CTA`
+
+Do not allow the theme toggle to compete visually with the primary business CTA.
+
+#### Mobile placement
+
+Place the same theme toggle inside the mobile navigation/menu in an obvious location. It must remain easy to find without adding unnecessary header clutter.
+
+#### Toggle behavior
+
+The button must:
+
+1. Show the current theme clearly.
+2. Allow one click/tap to switch between Light and Dark.
+3. Update the entire interface immediately.
+4. Persist the selected preference.
+5. Respect system preference when the user has not manually selected a theme.
+6. Provide an accessible name such as `Switch to dark theme` when Light is active and `Switch to light theme` when Dark is active.
+7. Expose the current state using an appropriate accessible state such as `aria-pressed` or an equivalent accessible pattern.
+8. Have visible hover, focus-visible, active and disabled states where applicable.
+
+#### Visual treatment
+
+Use a refined compact control rather than a large decorative switch.
+
+Preferred visual language:
+- sun icon for Light
+- moon icon for Dark
+- optional short text label such as `Light` / `Dark` where space allows
+- subtle border or surface treatment
+- clear focus ring
+- no neon glow
+- no excessive glassmorphism
+- no oversized animated toggle
+
+The icon should change meaningfully when the theme changes, but the transition must remain subtle.
+
+#### Theme toggle states
+
+Define and visually support:
+- Light / default
+- Dark / default
+- Hover
+- Focus-visible
+- Active/pressed
+- Disabled, if ever required
+
+#### Implementation rule
+
+The theme toggle must control a single global theme state. Do not create separate theme toggles for individual sections or components.
+
+All components must inherit the active semantic theme tokens rather than receiving manually inverted colors.
 
 ### Light theme
 
@@ -263,7 +327,7 @@ Requirements:
 - consistent spacing
 - accessible keyboard focus
 - mobile navigation that does not obstruct content
-- clearly accessible theme toggle
+- clearly accessible theme toggle button
 
 Do not overload the navigation with too many links.
 
@@ -304,6 +368,9 @@ For important but lower-priority actions.
 
 ### Tertiary
 Text/link actions for low-emphasis navigation.
+
+### Theme Toggle
+The Light/Dark Theme Toggle is a utility control, not a marketing CTA. It must remain visually distinct from primary business actions while being easy to discover.
 
 Buttons must have:
 - clear label
@@ -462,6 +529,7 @@ Requirements:
 - readable text sizes
 - clear link/button distinction
 - accessible theme switcher
+- theme state communicated to assistive technology
 
 Accessibility should be part of the design rather than an afterthought.
 
@@ -553,6 +621,7 @@ Do not create a completely different visual language for individual pages withou
 - use evidence-based trust signals
 - design dark mode as a complete visual system
 - test important components in both themes
+- provide a clearly discoverable Light/Dark theme toggle
 
 ### DON'T
 - overload sections with effects
@@ -568,6 +637,8 @@ Do not create a completely different visual language for individual pages withou
 - simply invert light-theme colors to create dark mode
 - use pure black backgrounds or excessive neon/glow in dark mode
 - allow theme-specific components to drift into a different design language
+- hide the theme control inside an unnecessarily deep settings flow
+- make the theme toggle larger or more visually dominant than the primary business CTA
 
 ## Final Design Standard
 
@@ -578,6 +649,8 @@ The finished website should feel:
 Both themes must feel like intentional expressions of the same brand—not two unrelated designs.
 
 The light theme should be the clean, bright professional experience. The dark theme should provide a sophisticated, comfortable alternative without becoming flashy or overly futuristic.
+
+The theme switch must be an actual, discoverable, accessible button that lets users move between Light and Dark modes with one click/tap.
 
 The design should not try to impress users by showing how many effects it can produce. It should impress them through the quality of its decisions.
 
