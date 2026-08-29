@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Malay Driving School — sitemap.
+  NOTE: the app uses hash-based routing (works on any static host without
+  server rewrites). Hash fragments are not indexed by search engines, so the
+  canonical root URL is listed here. If you switch to history routing with
+  server rewrites (vercel.json / netlify.toml / nginx), add the full routes:
+  /courses, /courses/<id>, /instructors, /about, /contact, /privacy.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://malaydrivingschool.in/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
