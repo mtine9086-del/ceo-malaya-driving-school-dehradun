@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X, MapPin } from "lucide-react";
+import { Menu, X, MapPin, Sun, Moon } from "lucide-react";
 import { cn } from "@/utils/cn";
 import { site } from "@/config/site";
 import { Button } from "@/components/ui";
@@ -12,6 +12,19 @@ const NAV = [
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
+
+type Theme = "light" | "dark";
+
+function getInitialTheme(): Theme {
+  if (typeof document !== "undefined") {
+    const current = document.documentElement.dataset.theme;
+    if (current === "dark" || current === "light") return current;
+  }
+  if (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    return "dark";
+  }
+  return "light";
+}
 
 /* Learner-board brand mark: red "M" on white, as used on training cars */
 export function LogoMark({ className }: { className?: string }) {
@@ -33,6 +46,7 @@ export function LogoMark({ className }: { className?: string }) {
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
   const { pathname } = useLocation();
   const onDarkHero = pathname === "/" && !scrolled;
 
@@ -43,8 +57,8 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* close the menu on navigation + lock body scroll while open */
   useEffect(() => setOpen(false), [pathname]);
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -60,13 +74,28 @@ export default function Header() {
   }, [open]);
 
   const lightText = onDarkHero && !open;
+  const isDark = theme === "dark";
+
+  const toggleTheme = () => {
+    const next: Theme = isDark ? "light" : "dark";
+    setTheme(next);
+    document.documentElement.dataset.theme = next;
+    document.documentElement.style.colorScheme = next;
+    try {
+      localStorage.setItem("malay-theme", next);
+    } catch {
+      // Storage may be unavailable; theme still works for the current session.
+    }
+  };
 
   return (
     <>
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-          lightText ? "bg-transparent py-4" : "border-b border-line/80 bg-white/95 py-2.5 shadow-sm backdrop-blur-md"
+          lightText
+            ? "bg-transparent py-4"
+            : "theme-header border-b border-line/80 bg-white/95 py-2.5 shadow-sm backdrop-blur-md"
         )}
       >
         <div className="container-x flex items-center justify-between gap-4">
@@ -108,11 +137,30 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
+            {/* Required Light/Dark theme toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-pressed={isDark}
+              aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+              title={isDark ? "Switch to light theme" : "Switch to dark theme"}
+              className={cn(
+                "theme-toggle inline-flex h-10 items-center gap-2 rounded-xl border px-3 text-[13px] font-semibold transition-all duration-200",
+                lightText
+                  ? "border-white/25 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
+                  : ""
+              )}
+            >
+              {isDark ? <Sun className="h-4 w-4" aria-hidden /> : <Moon className="h-4 w-4" aria-hidden />}
+              <span className="hidden sm:inline">{isDark ? "Light" : "Dark"}</span>
+            </button>
+
             <Button to="/contact?intent=trial" size="sm" className="hidden sm:inline-flex">
               Book a Trial
             </Button>
-            {/* Mobile toggle */}
+
+            {/* Mobile menu toggle */}
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -134,7 +182,7 @@ export default function Header() {
       <div
         id="mobile-menu"
         className={cn(
-          "fixed inset-0 z-40 flex flex-col bg-white pt-24 transition-opacity duration-300 lg:hidden",
+          "theme-menu fixed inset-0 z-40 flex flex-col pt-24 transition-opacity duration-300 lg:hidden",
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         )}
       >
@@ -156,6 +204,16 @@ export default function Header() {
             </NavLink>
           ))}
           <div className={cn("mt-5 flex flex-col gap-3 transition-all duration-300", open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0")}>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-pressed={isDark}
+              aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+              className="theme-toggle flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border px-5 py-3 font-semibold"
+            >
+              {isDark ? <Sun className="h-5 w-5" aria-hidden /> : <Moon className="h-5 w-5" aria-hidden />}
+              {isDark ? "Switch to Light Theme" : "Switch to Dark Theme"}
+            </button>
             <Button to="/contact?intent=trial" size="lg">
               Book a Trial Lesson
             </Button>
