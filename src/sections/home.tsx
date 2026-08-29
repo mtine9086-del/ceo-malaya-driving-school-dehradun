@@ -272,7 +272,7 @@ export function WhyChoose() {
             <Reveal delay={160} className="mt-8">
               <div className="relative overflow-hidden rounded-3xl border border-line shadow-card">
                 <SafeImage
-                  src="/images/ground.jpg"
+                  src="images/ground.jpg"
                   alt="Training car weaving between cones at the Malay practice ground in Laksar"
                   className="aspect-[16/10] w-full"
                 />

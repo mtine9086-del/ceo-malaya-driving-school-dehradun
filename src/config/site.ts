@@ -37,7 +37,7 @@ export const site = {
   media: {
     heroVideo: "",
     heroVideoMobile: "",
-    heroPoster: "/images/hero.jpg",
+    heroPoster: "images/hero.jpg",
   },
 } as const;
 

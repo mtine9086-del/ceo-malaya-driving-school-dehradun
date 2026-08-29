@@ -91,11 +91,11 @@ export const courses: Course[] = [
     timeSlots: ["Morning · 6:30–8:30 AM", "Day · 10:00 AM–12:00 PM", "Evening · 4:00–6:00 PM"],
     images: [
       {
-        src: "/images/course-carmt.jpg",
+        src: "images/course-carmt.jpg",
         alt: "Learner driving a white manual training car with an L-board while the instructor guides from the passenger seat",
       },
       {
-        src: "/images/ground.jpg",
+        src: "images/ground.jpg",
         alt: "Training hatchback weaving between cones at the Malay practice ground",
       },
     ],
@@ -128,11 +128,11 @@ export const courses: Course[] = [
     timeSlots: ["Morning · 7:00–9:00 AM", "Evening · 4:00–6:00 PM"],
     images: [
       {
-        src: "/images/course-carat.jpg",
+        src: "images/course-carat.jpg",
         alt: "Learner at the wheel of an automatic car with the instructor offering encouragement from the passenger seat",
       },
       {
-        src: "/images/hero.jpg",
+        src: "images/hero.jpg",
         alt: "Instructor guiding a learner beside a white training car on a quiet Uttarakhand road",
       },
     ],
@@ -165,7 +165,7 @@ export const courses: Course[] = [
     timeSlots: ["Morning · 6:30–8:30 AM", "Evening · 4:00–5:30 PM"],
     images: [
       {
-        src: "/images/course-tw.jpg",
+        src: "images/course-tw.jpg",
         alt: "Young learner practicing on a scooter with a helmet while the instructor encourages him from behind",
       },
     ],
@@ -197,7 +197,7 @@ export const courses: Course[] = [
     timeSlots: ["Flexible — fixed with your instructor"],
     images: [
       {
-        src: "/images/course-refresher.jpg",
+        src: "images/course-refresher.jpg",
         alt: "Confident woman driving a hatchback during a refresher lesson on a small-town road",
       },
     ],
@@ -229,11 +229,11 @@ export const courses: Course[] = [
     timeSlots: ["Day · 11:00 AM–1:00 PM"],
     images: [
       {
-        src: "/images/classroom.jpg",
+        src: "images/classroom.jpg",
         alt: "Instructor explaining hand-drawn road signs on a whiteboard to a small group of learners",
       },
       {
-        src: "/images/ground.jpg",
+        src: "images/ground.jpg",
         alt: "Training car practicing between cones at the Malay practice ground",
       },
     ],

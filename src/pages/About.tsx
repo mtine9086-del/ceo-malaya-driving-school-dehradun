@@ -58,7 +58,7 @@ export default function About() {
             <div className="relative">
               <div className="overflow-hidden rounded-3xl border border-line shadow-lift">
                 <SafeImage
-                  src="/images/hero.jpg"
+                  src="images/hero.jpg"
                   alt="A Malay instructor coaching a learner beside a white training car on a quiet Uttarakhand road"
                   className="aspect-[4/3] w-full"
                 />
