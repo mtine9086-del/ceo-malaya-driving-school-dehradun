@@ -124,7 +124,7 @@ export default function CourseFinder() {
               className="inline-flex min-h-[52px] w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-accent-500 px-6 py-3 font-display text-[14.5px] font-bold text-navy-950 shadow-[0_10px_24px_-10px_rgb(201_122_8/0.65)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent-300 active:translate-y-0"
             >
               <Search className="h-4.5 w-4.5" aria-hidden />
-              Enquire
+              Find My Course
             </button>
           </div>
         </div>

@@ -1,6 +1,8 @@
+import { site } from "@/config/site";
 import { instructors } from "@/data/content";
 import InstructorCard from "@/components/InstructorCard";
-import { PageMeta, Reveal, Button, SectionHeading } from "@/components/ui";
+import { PageMeta, Reveal, Button, SectionHeading, EmptyState } from "@/components/ui";
+import { Users } from "lucide-react";
 
 export default function Instructors() {
   return (
@@ -23,11 +25,23 @@ export default function Instructors() {
 
       <div className="section-pad">
         <div className="container-x">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {instructors.map((ins, i) => (
-              <InstructorCard key={ins.id} instructor={ins} delay={i * 90} />
-            ))}
-          </div>
+          {site.instructorsPublished ? (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {instructors.map((ins, i) => (
+                <InstructorCard key={ins.id} instructor={ins} delay={i * 90} />
+              ))}
+            </div>
+          ) : (
+            <EmptyState
+              icon={<Users className="h-6 w-6" aria-hidden />}
+              title="Instructor profiles are coming soon"
+              note="We're putting together photos and bios for our instructors. In the meantime, tell us your comfort level and preferred timing when you enquire — we will pair you with the right instructor and confirm who you'll be learning with."
+            >
+              <Button to="/contact" variant="secondary" arrow>
+                Enquire now
+              </Button>
+            </EmptyState>
+          )}
 
           <Reveal className="mt-14">
             <div className="flex flex-col items-start justify-between gap-5 rounded-3xl border border-line bg-white p-7 shadow-card sm:flex-row sm:items-center sm:p-9">

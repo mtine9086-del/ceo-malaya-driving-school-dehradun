@@ -30,6 +30,15 @@ export const site = {
   /* EDIT — add only real, live social profiles */
   socials: [] as { label: string; href: string }[],
 
+  /* EDIT — the instructor names, photos and bios in src/data/content.ts
+     are clearly-marked SAMPLE data (fictional people, illustrative
+     photos) so the Instructors page and course pages have a real
+     layout to review before launch. Set this to true only once the
+     school's actual instructor photos, names and bios have replaced
+     the sample entries — until then this stays false so no fictional
+     person is presented as real staff. */
+  instructorsPublished: false,
+
   /* Hero media. Poster always renders first for performance.
      EDIT: drop web-optimized variants into /public/media and set paths.
      Recommended: desktop 1080p mp4 ≤ ~6 MB · mobile 720p ≤ ~3 MB ·

@@ -38,9 +38,19 @@ export default function Contact() {
                   Where to find us
                 </h2>
                 <p className="mt-3 text-[14px] leading-relaxed text-ink-600">
-                  Training ground & classroom
-                  <br />
-                  {site.region}
+                  {site.addressLine ? (
+                    <>
+                      {site.addressLine}
+                      <br />
+                      <span className="text-ink-500">{site.region}</span>
+                    </>
+                  ) : (
+                    <>
+                      Training ground &amp; classroom
+                      <br />
+                      {site.region}
+                    </>
+                  )}
                 </p>
                 <p className="mt-3 flex items-start gap-2 rounded-xl bg-paper-100 px-3.5 py-2.5 text-[12.5px] leading-snug text-ink-500">
                   <Navigation className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-600" aria-hidden />

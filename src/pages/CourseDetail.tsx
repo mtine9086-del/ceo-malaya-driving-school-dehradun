@@ -44,7 +44,7 @@ export default function CourseDetail() {
     );
   }
 
-  const assigned = course.instructorIds.map(getInstructor).filter(Boolean);
+  const assigned = site.instructorsPublished ? course.instructorIds.map(getInstructor).filter(Boolean) : [];
   const related = relatedCourses(course);
   const active = course.images[Math.min(imgIndex, course.images.length - 1)];
 
