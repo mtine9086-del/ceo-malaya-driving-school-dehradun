@@ -151,7 +151,7 @@ export function TrustStrip() {
             const Icon = icons[i % icons.length];
             return (
               <Reveal key={t.title} delay={i * 80}>
-                <div className="flex h-full gap-4 rounded-2xl border border-line bg-white p-5 shadow-card">
+                <div className="flex h-full gap-4 rounded-2xl border border-line bg-surface p-5 shadow-card">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
@@ -229,7 +229,7 @@ export function Categories() {
 /* ------------------------------------------------------------------ */
 export function FeaturedCourses() {
   return (
-    <section className="relative bg-white">
+    <section className="relative bg-surface">
       <div className="section-pad">
         <div className="container-x">
           <SectionHeading
@@ -291,7 +291,7 @@ export function WhyChoose() {
               const Icon = icons[i % icons.length];
               return (
                 <Reveal as="li" key={w.title} delay={(i % 2) * 90 + Math.floor(i / 2) * 60}>
-                  <div className="h-full rounded-2xl border border-line bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:p-6">
+                  <div className="h-full rounded-2xl border border-line bg-surface p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift sm:p-6">
                     <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
@@ -313,7 +313,7 @@ export function WhyChoose() {
 /* ------------------------------------------------------------------ */
 export function ServiceArea() {
   return (
-    <section className="section-pad bg-white">
+    <section className="section-pad bg-surface">
       <div className="container-x">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* schematic illustration */}
@@ -355,7 +355,7 @@ export function ServiceArea() {
                     <span
                       className={cn(
                         "rounded-lg px-2.5 py-1 text-[11px] font-bold shadow-card",
-                        p.primary ? "bg-brand-600 text-white" : "bg-white text-ink-700"
+                        p.primary ? "bg-brand-600 text-white" : "bg-surface text-ink-700"
                       )}
                     >
                       {p.label}
@@ -397,7 +397,7 @@ export function ServiceArea() {
                     <span
                       className={cn(
                         "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl",
-                        a.primary ? "bg-brand-600 text-white" : "bg-white text-brand-600"
+                        a.primary ? "bg-brand-600 text-white" : "bg-surface text-brand-600"
                       )}
                     >
                       <MapPin className="h-5 w-5" aria-hidden />
@@ -445,7 +445,7 @@ export function Process() {
                   <div aria-hidden className="roadline absolute top-7 left-[calc(50%+2rem)] hidden w-[calc(100%-4rem)] md:block" />
                 )}
                 <div className="relative flex flex-col items-start gap-4 md:items-center md:text-center">
-                  <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-line bg-white text-brand-600 shadow-card">
+                  <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-line bg-surface text-brand-600 shadow-card">
                     <Icon className="h-6 w-6" aria-hidden />
                     <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-accent-500 font-display text-[11px] font-extrabold text-navy-950">
                       {i + 1}
@@ -461,7 +461,7 @@ export function Process() {
           })}
         </ol>
         <Reveal delay={150} className="mt-12 flex justify-center">
-          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-5 py-2.5 text-[13px] font-semibold text-ink-600 shadow-card">
+          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 text-[13px] font-semibold text-ink-600 shadow-card">
             <Bike className="h-4 w-4 text-brand-600" aria-hidden />
             Licences are issued by the RTO — we prepare you thoroughly for the test.
           </p>
@@ -476,7 +476,7 @@ export function Process() {
 /* ------------------------------------------------------------------ */
 export function Testimonials() {
   return (
-    <section className="section-pad bg-white">
+    <section className="section-pad bg-surface">
       <div className="container-x">
         <SectionHeading
           eyebrow="Learner stories"

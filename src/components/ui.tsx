@@ -102,7 +102,7 @@ export function Button({
     "outline-light":
       "border border-white/40 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:-translate-y-0.5 active:translate-y-0",
     "outline-dark":
-      "border border-brand-600/30 bg-white text-brand-700 hover:border-brand-600/60 hover:bg-brand-50 hover:-translate-y-0.5 active:translate-y-0",
+      "border border-brand-600/30 bg-surface text-brand-700 hover:border-brand-600/60 hover:bg-brand-50 hover:-translate-y-0.5 active:translate-y-0",
     ghost: "text-brand-700 hover:bg-brand-50",
   };
   const cls = cn(base, sizes[size], variants[variant], className);
@@ -298,7 +298,7 @@ export function EmptyState({
   children?: ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center rounded-3xl border border-dashed border-line bg-white/60 px-6 py-16 text-center">
+    <div className="flex flex-col items-center rounded-3xl border border-dashed border-line bg-surface/60 px-6 py-16 text-center">
       <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-600">{icon}</span>
       <h3 className="mt-5 text-lg font-bold text-ink-900">{title}</h3>
       <p className="mt-2 max-w-md text-[14.5px] leading-relaxed text-ink-600">{note}</p>

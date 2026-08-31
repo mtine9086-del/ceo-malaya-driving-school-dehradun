@@ -145,7 +145,7 @@ export default function CourseDetail() {
               <h2 className="font-display text-xl font-extrabold tracking-tight text-ink-900">What is included</h2>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {course.includes.map((inc) => (
-                  <li key={inc} className="flex items-start gap-3 rounded-2xl border border-line bg-white p-4 shadow-card">
+                  <li key={inc} className="flex items-start gap-3 rounded-2xl border border-line bg-surface p-4 shadow-card">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-safe-700" aria-hidden />
                     <span className="text-[13.5px] leading-relaxed text-ink-700">{inc}</span>
                   </li>
@@ -181,7 +181,7 @@ export default function CourseDetail() {
               </h2>
               <ul className="mt-4 flex flex-wrap gap-2.5">
                 {course.timeSlots.map((t) => (
-                  <li key={t} className="rounded-full border border-line bg-white px-4 py-2 text-[13px] font-semibold text-ink-700 shadow-sm">
+                  <li key={t} className="rounded-full border border-line bg-surface px-4 py-2 text-[13px] font-semibold text-ink-700 shadow-sm">
                     {t}
                   </li>
                 ))}
@@ -202,7 +202,7 @@ export default function CourseDetail() {
                         <li key={ins.id}>
                           <Link
                             to="/instructors"
-                            className="flex items-center gap-4 rounded-2xl border border-line bg-white p-4 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lift"
+                            className="flex items-center gap-4 rounded-2xl border border-line bg-surface p-4 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lift"
                           >
                             <SafeImage src={ins.photo} alt={ins.photoAlt} className="h-14 w-14 shrink-0 rounded-xl" />
                             <div>
@@ -222,7 +222,7 @@ export default function CourseDetail() {
           {/* ---------- enquiry sidebar ---------- */}
           <aside className="lg:sticky lg:top-26 lg:h-fit">
             <Reveal>
-              <div className="rounded-3xl border border-line bg-white p-6 shadow-lift sm:p-7">
+              <div className="rounded-3xl border border-line bg-surface p-6 shadow-lift sm:p-7">
                 <div className="flex items-center justify-between">
                   <span className="eyebrow">Book this course</span>
                   <Chip tone={statusTone[course.status]}>{course.status}</Chip>
@@ -277,7 +277,7 @@ export default function CourseDetail() {
         </div>
 
         {/* related */}
-        <div className="border-t border-line bg-white">
+        <div className="border-t border-line bg-surface">
           <div className="container-x section-pad">
             <h2 className="text-2xl font-extrabold tracking-tight text-ink-900 sm:text-3xl">Learners also consider</h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

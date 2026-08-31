@@ -60,7 +60,7 @@ export default function CourseFinder() {
       <form
         onSubmit={submit}
         aria-label="Quick course finder"
-        className="rounded-3xl border border-line bg-white/95 p-5 shadow-pop backdrop-blur-md sm:p-7"
+        className="rounded-3xl border border-line bg-surface/95 p-5 shadow-pop backdrop-blur-md sm:p-7"
       >
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h2 className="font-display text-lg font-extrabold tracking-tight text-ink-900">Find your course</h2>

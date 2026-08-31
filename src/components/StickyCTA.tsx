@@ -20,7 +20,7 @@ export default function StickyCTA() {
   return (
     <div
       className={cn(
-        "fixed inset-x-0 bottom-0 z-40 border-t border-line/80 bg-white/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-8px_30px_-12px_rgb(11_30_48/0.25)] backdrop-blur-md transition-transform duration-300 md:hidden",
+        "fixed inset-x-0 bottom-0 z-40 border-t border-line/80 bg-surface/95 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-8px_30px_-12px_rgb(11_30_48/0.25)] backdrop-blur-md transition-transform duration-300 md:hidden",
         visible && !onContact ? "translate-y-0" : "translate-y-full"
       )}
     >
@@ -29,7 +29,7 @@ export default function StickyCTA() {
           <a
             href={telHref}
             aria-label="Call Malay Driving School"
-            className="flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-xl border border-brand-600/30 bg-white font-display text-[14.5px] font-bold text-brand-700 transition-colors hover:bg-brand-50"
+            className="flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-xl border border-brand-600/30 bg-surface font-display text-[14.5px] font-bold text-brand-700 transition-colors hover:bg-brand-50"
           >
             <Phone className="h-4.5 w-4.5" aria-hidden />
             Call Now

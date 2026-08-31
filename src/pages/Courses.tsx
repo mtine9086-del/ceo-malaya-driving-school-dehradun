@@ -83,7 +83,7 @@ export default function Courses() {
       />
 
       {/* page header */}
-      <div className="border-b border-line bg-white pt-28 pb-12 sm:pt-32">
+      <div className="border-b border-line bg-surface pt-28 pb-12 sm:pt-32">
         <div className="container-x">
           <Reveal>
             <p className="eyebrow">
@@ -105,7 +105,7 @@ export default function Courses() {
         <div className="container-x">
           {/* filter bar */}
           <Reveal>
-            <div className="rounded-3xl border border-line bg-white p-4 shadow-card sm:p-5">
+            <div className="rounded-3xl border border-line bg-surface p-4 shadow-card sm:p-5">
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr_1fr_auto]">
                 <div className="sm:col-span-2 lg:col-span-1">
                   <label htmlFor="course-search" className="sr-only">

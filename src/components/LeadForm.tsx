@@ -181,7 +181,7 @@ export default function LeadForm() {
               will reach you on <strong className="font-semibold text-ink-900">{values.phone}</strong> during
               business hours to confirm batch timings and fees.
             </p>
-            <p className="mt-4 rounded-xl bg-white/70 px-4 py-2.5 text-[12.5px] text-ink-500">
+            <p className="mt-4 rounded-xl bg-surface/70 px-4 py-2.5 text-[12.5px] text-ink-500">
               Tip: for the fastest confirmation, keep your phone handy — trial slots are limited each week.
             </p>
           </>

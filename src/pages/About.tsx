@@ -41,7 +41,7 @@ export default function About() {
         description="Malay Driving School is a local driving school in Dehradun teaching two-wheeler and four-wheeler skills with a safety-first, patient method — for first-time and returning learners."
       />
 
-      <div className="border-b border-line bg-white pt-28 pb-12 sm:pt-32">
+      <div className="border-b border-line bg-surface pt-28 pb-12 sm:pt-32">
         <div className="container-x">
           <SectionHeading
             as="h1"
@@ -63,7 +63,7 @@ export default function About() {
                   className="aspect-[4/3] w-full"
                 />
               </div>
-              <div className="absolute -right-3 -bottom-5 hidden rounded-2xl border border-line bg-white px-5 py-4 shadow-lift sm:block">
+              <div className="absolute -right-3 -bottom-5 hidden rounded-2xl border border-line bg-surface px-5 py-4 shadow-lift sm:block">
                 <p className="font-display text-[13px] font-extrabold tracking-tight text-ink-900">{site.region}</p>
                 <p className="text-[12px] font-medium text-ink-500">Two & four-wheeler training</p>
               </div>
@@ -97,7 +97,7 @@ export default function About() {
       </section>
 
       {/* values */}
-      <section className="section-pad bg-white">
+      <section className="section-pad bg-surface">
         <div className="container-x">
           <SectionHeading
             eyebrow="What we stand for"
@@ -133,7 +133,7 @@ export default function About() {
           <ul className="space-y-3.5">
             {approach.map((a, i) => (
               <Reveal as="li" key={a} delay={i * 70}>
-                <div className="flex items-start gap-4 rounded-2xl border border-line bg-white p-5 shadow-card">
+                <div className="flex items-start gap-4 rounded-2xl border border-line bg-surface p-5 shadow-card">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-50 font-display text-[13px] font-extrabold text-brand-700">
                     {i + 1}
                   </span>

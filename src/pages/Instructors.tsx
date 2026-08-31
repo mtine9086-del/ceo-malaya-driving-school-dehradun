@@ -12,7 +12,7 @@ export default function Instructors() {
         description="Meet the patient, local driving instructors at Malay Driving School — specialists in manual and automatic cars, two-wheelers, women's batches and RTO test preparation."
       />
 
-      <div className="border-b border-line bg-white pt-28 pb-12 sm:pt-32">
+      <div className="border-b border-line bg-surface pt-28 pb-12 sm:pt-32">
         <div className="container-x">
           <SectionHeading
             as="h1"
@@ -44,7 +44,7 @@ export default function Instructors() {
           )}
 
           <Reveal className="mt-14">
-            <div className="flex flex-col items-start justify-between gap-5 rounded-3xl border border-line bg-white p-7 shadow-card sm:flex-row sm:items-center sm:p-9">
+            <div className="flex flex-col items-start justify-between gap-5 rounded-3xl border border-line bg-surface p-7 shadow-card sm:flex-row sm:items-center sm:p-9">
               <div>
                 <h2 className="text-xl font-extrabold tracking-tight text-ink-900 sm:text-2xl">
                   Not sure which instructor fits you?

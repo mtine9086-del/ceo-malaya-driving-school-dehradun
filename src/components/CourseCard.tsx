@@ -15,7 +15,7 @@ export default function CourseCard({ course, delay = 0 }: { course: Course; dela
     <Reveal as="article" delay={delay} className="h-full">
       <Link
         to={`/courses/${course.id}`}
-        className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
+        className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
       >
         <div className="relative aspect-[4/3] overflow-hidden">
           <SafeImage

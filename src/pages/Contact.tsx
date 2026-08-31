@@ -16,7 +16,7 @@ export default function Contact() {
         description="Enquire about two-wheeler or four-wheeler driving courses in Dehradun — batch timings, fees and trial lessons. We respond during business hours."
       />
 
-      <div className="border-b border-line bg-white pt-28 pb-12 sm:pt-32">
+      <div className="border-b border-line bg-surface pt-28 pb-12 sm:pt-32">
         <div className="container-x">
           <SectionHeading
             as="h1"
@@ -32,7 +32,7 @@ export default function Contact() {
           {/* info column */}
           <div className="space-y-5">
             <Reveal>
-              <div className="rounded-3xl border border-line bg-white p-6 shadow-card sm:p-7">
+              <div className="rounded-3xl border border-line bg-surface p-6 shadow-card sm:p-7">
                 <h2 className="flex items-center gap-2.5 font-display text-[16px] font-extrabold tracking-tight text-ink-900">
                   <MapPin className="h-5 w-5 text-brand-600" aria-hidden />
                   Where to find us
@@ -60,7 +60,7 @@ export default function Contact() {
             </Reveal>
 
             <Reveal delay={80}>
-              <div className="rounded-3xl border border-line bg-white p-6 shadow-card sm:p-7">
+              <div className="rounded-3xl border border-line bg-surface p-6 shadow-card sm:p-7">
                 <h2 className="flex items-center gap-2.5 font-display text-[16px] font-extrabold tracking-tight text-ink-900">
                   <Clock3 className="h-5 w-5 text-brand-600" aria-hidden />
                   Hours & batches
@@ -74,7 +74,7 @@ export default function Contact() {
             </Reveal>
 
             <Reveal delay={160}>
-              <div className="rounded-3xl border border-line bg-white p-6 shadow-card sm:p-7">
+              <div className="rounded-3xl border border-line bg-surface p-6 shadow-card sm:p-7">
                 <h2 className="font-display text-[16px] font-extrabold tracking-tight text-ink-900">Areas we serve</h2>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {serviceAreas.map((a) => (
@@ -91,7 +91,7 @@ export default function Contact() {
 
             {(hasPhone || hasEmail) && (
               <Reveal delay={200}>
-                <div className="rounded-3xl border border-line bg-white p-6 shadow-card sm:p-7">
+                <div className="rounded-3xl border border-line bg-surface p-6 shadow-card sm:p-7">
                   <h2 className="font-display text-[16px] font-extrabold tracking-tight text-ink-900">Direct contact</h2>
                   <ul className="mt-3 space-y-2.5 text-[14px] font-semibold text-brand-700">
                     {hasPhone && (
@@ -118,7 +118,7 @@ export default function Contact() {
 
           {/* form column */}
           <Reveal delay={120}>
-            <div className="rounded-3xl border border-line bg-white p-6 shadow-lift sm:p-8">
+            <div className="rounded-3xl border border-line bg-surface p-6 shadow-lift sm:p-8">
               <h2 className="flex items-center gap-2.5 font-display text-xl font-extrabold tracking-tight text-ink-900">
                 <CalendarCheck className="h-5.5 w-5.5 text-accent-600" aria-hidden />
                 {isTrial ? "Trial lesson request" : "Course enquiry"}
@@ -133,7 +133,7 @@ export default function Contact() {
       </section>
 
       {/* FAQs */}
-      <section className="section-pad bg-white">
+      <section className="section-pad bg-surface">
         <div className="container-x">
           <SectionHeading
             eyebrow="Questions"
@@ -143,7 +143,7 @@ export default function Contact() {
           <div className="mx-auto mt-10 max-w-3xl space-y-3">
             {faqs.map((f, i) => (
               <Reveal key={f.q} delay={i * 60}>
-                <details className="group rounded-2xl border border-line bg-paper-100/70 shadow-sm transition-colors open:border-brand-600/30 open:bg-white">
+                <details className="group rounded-2xl border border-line bg-paper-100/70 shadow-sm transition-colors open:border-brand-600/30 open:bg-surface">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-[15px] font-bold text-ink-900 sm:px-6 [&::-webkit-details-marker]:hidden">
                     {f.q}
                     <ChevronDown className="h-4.5 w-4.5 shrink-0 text-brand-600 transition-transform duration-200 group-open:rotate-180" aria-hidden />
